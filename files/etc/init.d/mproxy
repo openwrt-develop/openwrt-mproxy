@@ -6,13 +6,13 @@ mproxy_port=443
 
 start() {
 	service_start /usr/bin/mproxy -T -l $mproxy_port -h 127.0.0.1:1194 -d
-	iptables -A INPUT -p tcp --dport $mproxy_port -j ACCEPT
+	#iptables -A INPUT -p tcp --dport $mproxy_port -j ACCEPT
 	echo "mproxy has started."
 }
 
 stop() {
 	service_stop /usr/bin/mproxy
-	iptables -D INPUT -p tcp --dport $mproxy_port -j ACCEPT
+	#iptables -D INPUT -p tcp --dport $mproxy_port -j ACCEPT
 	echo "mproxy has stopped."
 }
 

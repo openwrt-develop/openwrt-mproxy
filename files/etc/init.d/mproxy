@@ -2,7 +2,7 @@
 # Copyright (c) 2011-2015 OpenWrt.org
 
 START=95
-mproxy_port=443
+mproxy_port=8080
 
 start() {
 	service_start /usr/bin/mproxy -T -l $mproxy_port -h 127.0.0.1:1194 -d

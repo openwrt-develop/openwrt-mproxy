@@ -33,8 +33,6 @@ endef
 define Package/mproxy/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mproxy $(1)/usr/bin/mproxy
-	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_BIN) ./files/etc/init.d/mproxy $(1)/etc/init.d/mproxy
 endef
 
 $(eval $(call BuildPackage,mproxy))
